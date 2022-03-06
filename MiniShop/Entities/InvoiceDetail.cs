@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MiniShop.Entities
 {
-    public class InvoiceDetails
+    public class InvoiceDetail
     {
         [Key]
 
@@ -24,11 +24,16 @@ namespace MiniShop.Entities
         [MaxLength(20)]
         public int Quantity { get; set; }
 
+
+        [Required]
+        [Column(TypeName = "decimal(19, 2)")]
+        public decimal ProductCost { get; set; }
+
         [Column(TypeName = "decimal(18, 2)")]
         public decimal DiscountPrice { get; set; }
 
         [ForeignKey(nameof(Invoice))]
         public int InvoiceId { get; set; }
-        public Invoices Invoice { get; set; }
+        public Invoice Invoice { get; set; }
     }
 }

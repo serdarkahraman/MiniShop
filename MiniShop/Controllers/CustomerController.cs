@@ -1,8 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using AutoMapper;
-using MiniShop.Repository;
 using MiniShop.Entities;
 using MiniShop.Entities.DTO;
+using MiniShop.Repositories;
+using MiniShop.Repositories.Interfaces;
 
 namespace MiniShop.Controllers
 {
@@ -30,18 +31,18 @@ namespace MiniShop.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateCustomer([FromBody] CustomerDto customer)
+        public async Task<IActionResult> CreateCustomer([FromBody] CreateCustomerDto customer)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var customerEntity = mapper.Map<Customers>(customer);
+            var customerEntity = mapper.Map<Customer>(customer);
 
-            repository.Customer.Create(customerEntity, customerType: "Customer");
+            repository.Customer.CreateCustomer(customerEntity, customerType: "Customer");
 
             await repository.SaveAsync();
 
-            var response = mapper.Map<CustomerDto>(customer);
+            var response = mapper.Map<CustomerDto>(customerEntity);
 
             return CreatedAtRoute("CustomerId", new { response.Id }, response);
         }

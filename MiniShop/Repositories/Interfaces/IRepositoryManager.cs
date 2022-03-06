@@ -1,4 +1,4 @@
-﻿namespace MiniShop.Repository
+﻿namespace MiniShop.Repositories.Interfaces
 {
     public interface IRepositoryManager
     { 

@@ -15,10 +15,10 @@ namespace MiniShop.Data.Configurations
             modelBuilder.ApplyConfiguration(new InvoiceDetailsData());
         }
 
-        public DbSet<Customers> Customers { get; set; }
-        public DbSet<Invoices> Invoices { get; set; }
-        public DbSet<InvoiceDetails> InvoiceDetails { get; set; }
-        public DbSet<DiscountTypes> DiscountType { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Invoice> Invoices { get; set; }
+        public DbSet<InvoiceDetail> InvoiceDetails { get; set; }
+        public DbSet<DiscountType> DiscountType { get; set; }
 
     }
 }

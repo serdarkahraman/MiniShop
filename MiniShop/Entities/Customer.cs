@@ -1,12 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 namespace MiniShop.Entities
 {
-    public class Customers
+    public class Customer
     {
-        public Customers()
-        {
-            Created = DateTime.Now;
-        }
+        public Customer() => Created = DateTime.Now;
+
         [Key]
         public int Id { get; set; }
         [Required]

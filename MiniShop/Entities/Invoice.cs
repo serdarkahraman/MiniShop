@@ -2,9 +2,9 @@
 using System.ComponentModel.DataAnnotations.Schema;
 namespace MiniShop.Entities
 {
-    public class Invoices
+    public class Invoice
     {
-        public Invoices()
+        public Invoice()
         {
             Created = DateTime.Now;
         }
@@ -32,8 +32,8 @@ namespace MiniShop.Entities
 
         [ForeignKey(nameof(Customer))]
         public int CustomerId { get; set; }
-        public Customers Customer { get; set; }
+        public Customer Customer { get; set; }
 
-        ICollection<InvoiceDetails> InvoiceDetails { get; set; }
+        ICollection<InvoiceDetail> InvoiceDetails { get; set; }
     }
 }

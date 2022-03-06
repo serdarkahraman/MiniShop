@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 namespace MiniShop.Entities
 {
-    public class DiscountTypes
+    public class DiscountType
     {
         [Key]
         public int Id { get; set; }

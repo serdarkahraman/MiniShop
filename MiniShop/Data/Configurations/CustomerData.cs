@@ -4,16 +4,16 @@ using MiniShop.Entities;
 
 namespace MiniShop.Data.Configurations
 {
-    public class CustomerData : IEntityTypeConfiguration<Customers>
+    public class CustomerData : IEntityTypeConfiguration<Customer>
     {
-        public void Configure(EntityTypeBuilder<Customers> builder)
+        public void Configure(EntityTypeBuilder<Customer> builder)
         {
             builder.HasData
             (
-                new Customers { Id = 1, FirstName = "Serdar", LastName = "Kahraman", Email = "serdar@kahraman.com", PhoneNumber = "05324480153", CustomerType = "Employee", Created = DateTime.Now.AddYears(-33) },
-                new Customers { Id = 2, FirstName = "Sevgi", LastName = "Kahraman", Email = "sevgi@kahraman.com", PhoneNumber = "05324480154", CustomerType = "Affiliate", Created = DateTime.Now.AddMonths(-28) },
-                new Customers { Id = 3, FirstName = "Alya", LastName = "Kahraman", Email = "alya@kahraman.com", PhoneNumber = "05324480155", CustomerType = "Customer", Created = DateTime.Now.AddYears(-4) },
-                new Customers { Id = 4, FirstName = "Alparslan", LastName = "Kahraman", Email = "alparslan@kahraman.com", PhoneNumber = "05324480156", CustomerType = "Customer", Created = DateTime.Now }
+                new Customer { Id = 1, FirstName = "Serdar", LastName = "Kahraman", Email = "serdar@kahraman.com", PhoneNumber = "05324480153", CustomerType = "Employee", Address = "1", Created = DateTime.Now.AddYears(-33) },
+                new Customer { Id = 2, FirstName = "Sevgi", LastName = "Kahraman", Email = "sevgi@kahraman.com", PhoneNumber = "05324480154", CustomerType = "Affiliate", Address = "1", Created = DateTime.Now.AddMonths(-28) },
+                new Customer { Id = 3, FirstName = "Alya", LastName = "Kahraman", Email = "alya@kahraman.com", PhoneNumber = "05324480155", CustomerType = "Customer", Address = "1", Created = DateTime.Now.AddYears(-4) },
+                new Customer { Id = 4, FirstName = "Alparslan", LastName = "Kahraman", Email = "alparslan@kahraman.com", PhoneNumber = "05324480156", CustomerType = "Customer", Address = "1", Created = DateTime.Now }
             );
         }
     }
