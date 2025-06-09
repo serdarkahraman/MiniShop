@@ -68,7 +68,7 @@ namespace MiniShop.Controllers
             var discounts = await _repository.Discount.GetAllDiscounts();
             foreach (var discount in discounts)
             {
-                if (discount.Equals(customer.CustomerType) && discount.IsRatePercentage)
+                if (discount.Type.Equals(customer.CustomerType, StringComparison.OrdinalIgnoreCase) && discount.IsRatePercentage)
                 {
                     var discountValue = invoiceDto.OrderTotal * (discount.Rate / 100);
                     invoiceSubtotal = invoiceDto.OrderTotal - discountValue;
