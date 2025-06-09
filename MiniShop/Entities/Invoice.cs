@@ -34,6 +34,6 @@ namespace MiniShop.Entities
         public int CustomerId { get; set; }
         public Customer Customer { get; set; }
 
-        ICollection<InvoiceDetail> InvoiceDetails { get; set; }
+        public ICollection<InvoiceDetail> InvoiceDetails { get; set; }
     }
 }
